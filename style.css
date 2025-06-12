@@ -35,11 +35,10 @@ nav {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
-    
 }
 
 .logo::before {
-    content: "🧶"; /* Ganti emoji logo */
+    content: "🧶"; /* Ganti emoji logo jika diinginkan */
     margin-right: 0.5rem;
     font-size: 2rem;
 }
@@ -64,36 +63,27 @@ nav {
 
 /* Hero Section Styling */
 .hero {
-    /* Hapus background-image dari sini */
-    background-color: white; /* Latar belakang solid putih untuk hero */
-    height: 70vh; /* Tinggi hero tetap 70% dari viewport height */
-    position: relative; /* Penting untuk penempatan absolut .hero-graphic */
+    background-color: white;
+    height: 70vh;
+    position: relative;
     display: flex;
     justify-content: flex-end; /* Memindahkan konten ke kanan */
-    align-items: center; /* Menengahkan konten secara vertikal */
-    color: #333; /* Warna teks disesuaikan dengan background putih */
-    padding: 0 5%; /* Menambahkan padding horizontal untuk menjaga jarak dari tepi */
-    overflow: hidden; /* Pastikan tidak ada elemen yang meluber */
+    align-items: center;
+    color: #333;
+    padding: 0 5%;
+    overflow: hidden; /* Tetap pertahankan overflow hidden untuk hero container secara keseluruhan */
 }
 
-/* Styling untuk gambar DTJ.jpg yang sekarang menjadi elemen img */
+/* Styling untuk gambar FINAL.png yang sekarang menjadi elemen img */
 .hero-graphic {
     position: absolute;
-    top: 50%; /* Pusatkan secara vertikal */
-    left: 0; /* Mulai dari paling kiri */
-    transform: translateY(-50%); /* Penyesuaian untuk pusatkan vertikal */
-    max-height: 100%; /* Batasi tinggi gambar agar tidak terlalu besar di desktop */
-    width: auto; /* Jaga rasio aspek */
-    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
-    /* Anda bisa menyesuaikan 'left' jika ingin ada sedikit jarak dari tepi kiri */
-    /* Misalnya: left: 2%; */
-
-    /* Mengatasi rongga bawah yang Anda maksud */
-    height: 100%; /* Membuat gambar mengisi penuh tinggi hero */
-    left: 0; /* Pastikan dimulai dari kiri */
-    object-fit: cover; /* Ini akan mengisi ruang yang tersedia, mungkin sedikit terpotong */
-    /* Jika object-fit: cover membuat gambar terpotong terlalu banyak,
-       coba kembali ke object-fit: contain; dan atur 'width' atau 'max-width' */
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    max-height: 90%;
+    width: auto;
+    object-fit: cover;
+    height: 100%;
 }
 
 
@@ -102,27 +92,31 @@ nav {
     width: 45%; /* Maksimal setengah dari lebar hero, disisakan sedikit padding */
     max-width: 500px; /* Batasi lebar maksimum agar tidak terlalu lebar */
     text-align: right; /* Teks di kanan */
-    color: #333; /* Mengatur warna teks agar kontras dengan latar belakang putih */
-    text-shadow: none; /* Hapus text-shadow karena background sudah terang */
+    color: #333;
+    text-shadow: none;
+    /* Tambahkan atau pastikan properti ini tidak menyebabkan pemotongan */
+    word-wrap: break-word; /* Memungkinkan kata panjang untuk break */
+    /* overflow: visible; * Tidak perlu ditambahkan ke sini karena overflow dikontrol di parent */
 }
 
 .hero-content h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    color: #333; /* Pastikan warna teks cocok dengan background putih */
+    color: #333;
+    line-height: 1.2; /* Beri sedikit ruang antar baris */
 }
 
 .hero-content p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
     opacity: 0.9;
-    color: #555; /* Sedikit lebih gelap dari #333 */
+    color: #555;
 }
 
 /* Button Styling */
 .btn {
-    background: #000; /* Ubah warna button agar kontras di background putih */
-    color: white; /* Warna teks button */
+    background: #000;
+    color: white;
     padding: 1rem 2rem;
     border: none;
     border-radius: 5px;
@@ -137,7 +131,7 @@ nav {
 .btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    background-color: #555; /* Efek hover untuk button */
+    background-color: #555;
 }
 
 /* Container Styling */
@@ -187,7 +181,7 @@ nav {
 /* Products Grid Styling */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Selalu 4 kolom, setiap kolom mengambil fraksi yang sama */
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -225,7 +219,7 @@ nav {
 
 .product-image {
     width: 100%;
-    padding-bottom: 100%; /* Ini menciptakan rasio aspek 1:1 (kotak) */
+    padding-bottom: 100%;
     position: relative;
     overflow: hidden;
     background: #eee;
@@ -288,7 +282,7 @@ nav {
     background: #eee;
     border-radius: 15px;
     width: 100%;
-    padding-bottom: 100%; /* Rasio aspek 1:1 untuk gambar detail */
+    padding-bottom: 100%;
     position: relative;
     overflow: hidden;
 }
@@ -366,7 +360,7 @@ nav {
 }
 
 .about-image {
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); /* Warna gradient disesuaikan */
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
     height: 400px;
     display: flex;
     align-items: center;
@@ -376,7 +370,7 @@ nav {
 }
 
 .about-image::before {
-    content: "🧶"; /* Ganti ikon */
+    content: "🧶";
     font-size: 6rem;
     opacity: 0.3;
     position: absolute;
@@ -428,7 +422,7 @@ nav {
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* Memaksa 4 kolom di desktop */
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
     margin: 2rem 0;
 }
@@ -467,14 +461,12 @@ nav {
 /* Responsive Design (Media Queries) */
 @media (max-width: 992px) { /* Mengatur breakpoint di 992px (typical laptop/large tablet) */
     .products-grid {
-        grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk layar lebih kecil dari 992px */
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .hero-graphic {
-        /* Sesuaikan ukuran graphic di layar menengah */
         max-height: 70%; 
-        left: 0; /* Mungkin sedikit lebih jauh dari tepi */
-        /* width: 40%; /* Jika ingin membatasi lebar */
+        left: 0;
     }
 
     .hero-content {
@@ -482,8 +474,12 @@ nav {
         max-width: 600px;
     }
 
+    .hero-content h1 {
+        font-size: 2.5rem; /* Menurunkan ukuran font untuk teks hero di layar menengah */
+    }
+
     .contact-info {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk contact di layar menengah */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -509,37 +505,38 @@ nav {
     /* Hero */
     .hero {
         height: 50vh;
-        flex-direction: column; /* Mengatur konten dan gambar secara vertikal */
-        justify-content: center; /* Pusatkan konten vertikal */
+        flex-direction: column;
+        justify-content: center;
         padding: 1rem;
     }
 
     .hero-graphic {
-        position: static; /* Hilangkan posisi absolut */
-        transform: none; /* Hilangkan transformasi */
-        max-height: 180px; /* Atur tinggi di mobile */
-        margin-bottom: 1rem; /* Beri jarak ke teks */
-        width: auto; /* Biarkan lebar menyesuaikan */
+        position: static;
+        transform: none;
+        max-height: 180px;
+        margin-bottom: 1rem;
+        width: auto;
     }
 
     .hero-content {
-        width: 100%; /* Ambil lebar penuh */
-        text-align: center; /* Teks di tengah */
+        width: 90%; /* Memberikan lebih banyak lebar di mobile */
+        text-align: center;
         padding: 0;
         max-width: none;
     }
 
     .hero-content h1 {
-        font-size: 2rem;
+        font-size: 1.8rem; /* Lebih kecil lagi di mobile */
+        line-height: 1.3; /* Sedikit lebih tinggi untuk keterbacaan */
     }
     
     .hero-content p {
-        font-size: 1rem;
+        font-size: 0.9rem; /* Lebih kecil di mobile */
     }
 
     /* Products Grid */
     .products-grid {
-        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+        grid-template-columns: repeat(2, 1fr);
         gap: 1.5rem;
     }
     
@@ -552,7 +549,7 @@ nav {
 
     .product-detail-image {
         height: 300px;
-        padding-bottom: 100%; /* Pertahankan rasio aspek 1:1 */
+        padding-bottom: 100%;
     }
 
     .product-detail-info {
@@ -592,14 +589,22 @@ nav {
     }
 
     .hero-graphic {
-        max-height: 120px; /* Lebih kecil lagi di ponsel */
+        max-height: 100px; /* Lebih kecil lagi di ponsel */
+        margin-bottom: 0.5rem;
     }
 
     .hero-content h1 {
-        font-size: 1.8rem;
+        font-size: 1.5rem; /* Ukuran font paling kecil di ponsel */
+        line-height: 1.2;
     }
 
     .hero-content p {
+        font-size: 0.8rem; /* Lebih kecil lagi di ponsel */
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        padding: 0.8rem 1.5rem; /* Ukuran button lebih kecil */
         font-size: 0.9rem;
     }
 
@@ -608,7 +613,7 @@ nav {
     }
 
     .products-grid {
-        grid-template-columns: 1fr; /* Kembali ke 1 kolom di ponsel */
+        grid-template-columns: 1fr;
         gap: 1rem;
     }
 
@@ -617,7 +622,7 @@ nav {
     }
     
     .contact-info {
-        grid-template-columns: 1fr; /* 1 kolom di mobile/tablet kecil */
+        grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
