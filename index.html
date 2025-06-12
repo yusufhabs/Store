@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knit Knack - Aksesori Gantungan Unik</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">KNIT KNACK</div>
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')">Home</a></li>
+                <li><a href="#" onclick="showPage('products')">Semua Produk</a></li>
+                <li><a href="#" onclick="showPage('about')">Tentang</a></li>
+                <li><a href="#" onclick="showPage('contact')">Hubungi Kami</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="home" class="current-page active">
+        <section class="hero">
+            <img src="FINAL.png" alt="Knit Knack Handmade Design" class="hero-graphic">
+            <div class="hero-content">
+                <p>SELAMAT DATANG DI KNIT KNACK!</p> <h1>LENGKAPI GAYAMU DENGAN SENTUHAN KREATIF BUATAN TANGAN</h1> <a href="#" class="btn" onclick="showPage('products')">Temukan Favoritmu</a> </div>
+        </section>
+    </div>
+
+    <div id="products" class="current-page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Semua Produk</h2>
+            </div>
+            
+            <div class="filter-bar">
+                <div class="filter-info">Showing 1 - 8 of 8 results</div>
+                <select class="sort-dropdown" onchange="filterProducts(this.value)">
+                    <option value="all">Semua Jenis</option>
+                    <option value="gantungan">Gantungan</option>
+                    <option value="pouch">Pouch</option>
+                    <option value="kaca">Kaca</option>
+                </select>
+            </div>
+
+            <div class="products-grid">
+                <div class="product-card" data-category="gantungan" onclick="showProductDetail('gantungan-1')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="1.jpg" alt="Produk Gantungan 1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Gantungan Kunci Jepang A</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp100.000</span>
+                            <span class="current-price">Rp90.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gantungan" onclick="showProductDetail('gantungan-2')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="2.jpg" alt="Produk Gantungan 2">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Gantungan Tas Katana</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp100.000</span>
+                            <span class="current-price">Rp90.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pouch" onclick="showProductDetail('pouch-1')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="3.jpg" alt="Produk Pouch 1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Pouch Kosmetik Sakura</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp120.000</span>
+                            <span class="current-price">Rp100.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pouch" onclick="showProductDetail('pouch-2')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="4.jpg" alt="Produk Pouch 2">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Pouch Serbaguna Kimono</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp120.000</span>
+                            <span class="current-price">Rp100.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gantungan" onclick="showProductDetail('gantungan-3')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="5.jpg" alt="Produk Gantungan 3">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Gantungan Handphone Ninja</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp95.000</span>
+                            <span class="current-price">Rp85.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="pouch" onclick="showProductDetail('pouch-3')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="6.jpg" alt="Produk Pouch 3">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Pouch Koin Maneki Neko</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp80.000</span>
+                            <span class="current-price">Rp70.000</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="gantungan" onclick="showProductDetail('gantungan-4')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="7.jpg" alt="Produk Gantungan 4">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Gantungan Ransel Sumo</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp110.000</span>
+                            <span class="current-price">Rp99.000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kaca" onclick="showProductDetail('kaca-1')">
+                    <div class="sale-badge">Sale!</div>
+                    <div class="product-image">
+                        <img src="8.jpg" alt="Produk Kaca 1">
+                    </div>
+                    <div class="product-info">
+                        <div class="product-title">Kaca Lipat Geisha</div>
+                        <div class="product-price">
+                            <span class="original-price">Rp75.000</span>
+                            <span class="current-price">Rp65.000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="current-page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Tentang Knit Knack</h2>
+            </div>
+            
+            <div class="about-section">
+                <div class="about-image">
+                    <div class="about-image-content">🧶✨</div>
+                </div>
+                <div class="about-content">
+                    <h3>Seni Merajut dengan Kreativitas Modern</h3>
+                    <p>Knit knack adalah seni merajut yang menggabungkan teknik tradisional dengan kreativitas modern, menghasilkan pola dan tekstur yang unik. Dalam kerajinan tangan, knit knack menggambarkan keahlian khusus dalam menciptakan karya rajutan yang menarik dan beragam.</p>
+                    <p>Teknik dasar merajut melibatkan penggunaan jarum dan benang untuk membentuk kain. Knit knack menambahkan lapisan kompleksitas dengan mengintegrasikan berbagai jenis jahitan dan pola. Kreativitas dalam knit knack juga terlihat dalam pemilihan warna dan bahan.</p>
+                    <p>Knit knack juga memberikan manfaat emosional dan terapeutik. Proses merajut dapat menjadi bentuk meditasi, membantu meredakan stres dan meningkatkan konsentrasi. Proyek yang dihasilkan dari knit knack sangat beragam, mulai dari aksesori kecil seperti gantungan kunci dan pouch.</p>
+            
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="contact" class="current-page">
+        <div class="container">
+            <div class="page-header">
+                <h2>Hubungi Kami</h2>
+                <p>Punya pertanyaan? Jangan ragu untuk menghubungi kami!</p>
+            </div>
+            
+            <div class="contact-section">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="icon">📱</div>
+                        <h4>WhatsApp</h4>
+                        <p>+62 812-3456-7890</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📧</div>
+                        <h4>Email</h4>
+                        <p>nabilaeka@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">📍</div>
+                        <h4>Alamat</h4>
+                        <p>Surabaya, Jawa Timur<br>Indonesia</p>
+                    </div>
+                    <div class="contact-item">
+                        <div class="icon">🕒</div>
+                        <h4>Jam Operasional</h4>
+                        <p>Senin - Minggu<br>09:00 - 21:00 WIB</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="product-detail" class="current-page">
+        <div class="container">
+            <div class="product-detail">
+                <div class="product-detail-image">
+                    <div class="sale-badge">Sale!</div>
+                    <img id="detail-product-image" src="" alt="Detail Produk">
+                </div>
+                <div class="product-detail-info">
+                    <div id="detail-product-category" style="color: #666; margin-bottom: 0.5rem;"></div>
+                    <h1 id="detail-product-title"></h1>
+                    <div class="price">
+                        <span id="detail-original-price" class="original-price" style="font-size: 1.2rem;"></span>
+                        <span id="detail-current-price" class="current-price" style="font-size: 1.8rem;"></span>
+                    </div>
+                    <p id="detail-product-description" style="margin: 1.5rem 0; color: #666;"></p>
+                    
+                    <a id="whatsapp-link" href="#" class="whatsapp-btn" target="_blank">
+                        Pesan via WhatsApp
+                    </a>
+
+                    <div class="product-meta">
+                        <p><strong>SKU:</strong> <span id="detail-product-sku"></span></p>
+                        <p><strong>Category:</strong> <span id="detail-product-meta-category"></span></p>
+                        <p><strong>Material:</strong> <span id="detail-product-material"></span></p>
+                        <p><strong>Ukuran Tersedia:</strong> <span id="detail-product-sizes"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Data produk untuk memudahkan pengelolaan
+        const productsData = {
+            'gantungan-1': {
+                img: '1.jpg',
+                category: 'Gantungan',
+                title: 'Gantungan Kunci Jepang A',
+                originalPrice: 'Rp100.000',
+                currentPrice: 'Rp90.000',
+                description: 'Gantungan kunci bertema Jepang yang unik dan stylish, cocok untuk menambah aksen pada kunci atau tas Anda. Dibuat dari bahan berkualitas tinggi.',
+                sku: 'KK-GKJA-001',
+                material: 'Benang Rajut',
+                sizes: 'All Size'
+            },
+            'gantungan-2': {
+                img: '2.jpg',
+                category: 'Gantungan',
+                title: 'Gantungan Tas Katana',
+                originalPrice: 'Rp100.000',
+                currentPrice: 'Rp90.000',
+                description: 'Gantungan tas dengan desain pedang Katana yang ikonik. Tambahkan sentuhan samurai pada gaya Anda. Desain detail dan bahan kokoh.',
+                sku: 'KK-GTK-002',
+                material: 'Benang Rajut',
+                sizes: 'All Size'
+            },
+            'pouch-1': {
+                img: '3.jpg',
+                category: 'Pouch',
+                title: 'Pouch Kosmetik Sakura',
+                originalPrice: 'Rp120.000',
+                currentPrice: 'Rp100.000',
+                description: 'Pouch serbaguna dengan motif bunga sakura yang indah, cocok untuk menyimpan kosmetik atau barang kecil lainnya. Elegan dan praktis.',
+                sku: 'KK-PKS-003',
+                material: 'Benang Rajut Katun',
+                sizes: '15x20 cm'
+            },
+            'pouch-2': {
+                img: '4.jpg',
+                category: 'Pouch',
+                title: 'Pouch Serbaguna Kimono',
+                originalPrice: 'Rp120.000',
+                currentPrice: 'Rp100.000',
+                description: 'Pouch dengan desain terinspirasi dari motif kimono tradisional Jepang. Ideal untuk menyimpan perlengkapan sehari-hari Anda.',
+                sku: 'KK-PSK-004',
+                material: 'Benang Rajut Katun',
+                sizes: '18x25 cm'
+            },
+            'gantungan-3': {
+                img: '5.jpg',
+                category: 'Gantungan',
+                title: 'Gantungan Handphone Ninja',
+                originalPrice: 'Rp95.000',
+                currentPrice: 'Rp85.000',
+                description: 'Gantungan unik berbentuk ninja, cocok untuk mempercantik handphone atau tas Anda. Desain lucu dan menarik.',
+                sku: 'KK-GHN-005',
+                material: 'Benang Rajut Akrilik',
+                sizes: 'All Size'
+            },
+            'pouch-3': {
+                img: '6.jpg',
+                category: 'Pouch',
+                title: 'Pouch Koin Maneki Neko',
+                originalPrice: 'Rp80.000',
+                currentPrice: 'Rp70.000',
+                description: 'Pouch kecil lucu dengan gambar Maneki Neko (kucing keberuntungan). Sempurna untuk menyimpan koin atau benda mini lainnya.',
+                sku: 'KK-PKMN-006',
+                material: 'Benang Rajut Akrilik',
+                sizes: '10x10 cm'
+            },
+            'gantungan-4': {
+                img: '7.jpg',
+                category: 'Gantungan',
+                title: 'Gantungan Ransel Sumo',
+                originalPrice: 'Rp110.000',
+                currentPrice: 'Rp99.000',
+                description: 'Gantungan ransel bertema pegulat sumo yang menggemaskan. Buat tas Anda menonjol dengan aksesori ini.',
+                sku: 'KK-GRS-007',
+                material: 'Benang Rajut Wol',
+                sizes: 'All Size'
+            },
+            'kaca-1': {
+                img: '8.jpg',
+                category: 'Kaca',
+                title: 'Kaca Lipat Geisha',
+                originalPrice: 'Rp75.000',
+                currentPrice: 'Rp65.000',
+                description: 'Kaca lipat kompak dengan ilustrasi geisha klasik. Praktis dibawa bepergian dan selalu tampil stylish.',
+                sku: 'KK-KLG-008',
+                material: 'Benang Rajut & Kaca',
+                sizes: '7x10 cm (lipat)'
+            }
+        };
+
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.current-page');
+            pages.forEach(page => page.classList.remove('active'));
+            document.getElementById(pageId).classList.add('active');
+        }
+
+        function showProductDetail(productId) {
+            const product = productsData[productId];
+            if (product) {
+                document.getElementById('detail-product-image').src = product.img;
+                document.getElementById('detail-product-category').textContent = product.category;
+                document.getElementById('detail-product-title').textContent = product.title;
+                document.getElementById('detail-original-price').textContent = product.originalPrice;
+                document.getElementById('detail-current-price').textContent = product.currentPrice;
+                document.getElementById('detail-product-description').textContent = product.description;
+                document.getElementById('detail-product-sku').textContent = product.sku; // Menambahkan ini
+                document.getElementById('detail-product-meta-category').textContent = product.category; // Menambahkan ini
+                document.getElementById('detail-product-material').textContent = product.material;
+                document.getElementById('detail-product-sizes').textContent = product.sizes;
+                
+                const whatsappMessage = `Halo, saya tertarik dengan ${product.title} seharga ${product.currentPrice}. Bisakah saya mendapatkan informasi lebih lanjut?`;
+                document.getElementById('whatsapp-link').href = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
+
+                showPage('product-detail');
+            }
+        }
+
+        function filterProducts(category) {
+            const productCards = document.querySelectorAll('.products-grid .product-card');
+            let visibleProductsCount = 0;
+            productCards.forEach(card => {
+                const productCategory = card.getAttribute('data-category');
+                if (category === 'all' || productCategory === category) {
+                    card.style.display = 'flex'; // Tetap tampilkan sebagai flex untuk konsistensi layout
+                    visibleProductsCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            document.querySelector('.filter-info').textContent = `Showing 1 - ${visibleProductsCount} of ${visibleProductsCount} results`;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+            filterProducts('all'); // Initialize the filter info on load
+        });
+    </script>
+</body>
+</html>

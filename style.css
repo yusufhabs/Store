@@ -1,0 +1,627 @@
+/* General Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background: white;
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    
+}
+
+.logo::before {
+    content: "🧶"; /* Ganti emoji logo */
+    margin-right: 0.5rem;
+    font-size: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* Hero Section Styling */
+.hero {
+    /* Hapus background-image dari sini */
+    background-color: white; /* Latar belakang solid putih untuk hero */
+    height: 70vh; /* Tinggi hero tetap 70% dari viewport height */
+    position: relative; /* Penting untuk penempatan absolut .hero-graphic */
+    display: flex;
+    justify-content: flex-end; /* Memindahkan konten ke kanan */
+    align-items: center; /* Menengahkan konten secara vertikal */
+    color: #333; /* Warna teks disesuaikan dengan background putih */
+    padding: 0 5%; /* Menambahkan padding horizontal untuk menjaga jarak dari tepi */
+    overflow: hidden; /* Pastikan tidak ada elemen yang meluber */
+}
+
+/* Styling untuk gambar DTJ.jpg yang sekarang menjadi elemen img */
+.hero-graphic {
+    position: absolute;
+    top: 50%; /* Pusatkan secara vertikal */
+    left: 0; /* Mulai dari paling kiri */
+    transform: translateY(-50%); /* Penyesuaian untuk pusatkan vertikal */
+    max-height: 100%; /* Batasi tinggi gambar agar tidak terlalu besar di desktop */
+    width: auto; /* Jaga rasio aspek */
+    object-fit: contain; /* Pastikan gambar tidak terdistorsi */
+    /* Anda bisa menyesuaikan 'left' jika ingin ada sedikit jarak dari tepi kiri */
+    /* Misalnya: left: 2%; */
+
+    /* Mengatasi rongga bawah yang Anda maksud */
+    height: 100%; /* Membuat gambar mengisi penuh tinggi hero */
+    left: 0; /* Pastikan dimulai dari kiri */
+    object-fit: cover; /* Ini akan mengisi ruang yang tersedia, mungkin sedikit terpotong */
+    /* Jika object-fit: cover membuat gambar terpotong terlalu banyak,
+       coba kembali ke object-fit: contain; dan atur 'width' atau 'max-width' */
+}
+
+
+.hero-content {
+    /* Menyesuaikan lebar dan posisi teks hero */
+    width: 45%; /* Maksimal setengah dari lebar hero, disisakan sedikit padding */
+    max-width: 500px; /* Batasi lebar maksimum agar tidak terlalu lebar */
+    text-align: right; /* Teks di kanan */
+    color: #333; /* Mengatur warna teks agar kontras dengan latar belakang putih */
+    text-shadow: none; /* Hapus text-shadow karena background sudah terang */
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #333; /* Pastikan warna teks cocok dengan background putih */
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+    color: #555; /* Sedikit lebih gelap dari #333 */
+}
+
+/* Button Styling */
+.btn {
+    background: #000; /* Ubah warna button agar kontras di background putih */
+    color: white; /* Warna teks button */
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    background-color: #555; /* Efek hover untuk button */
+}
+
+/* Container Styling */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Page Header Styling */
+.page-header {
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Filter Bar Styling */
+.filter-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.filter-info {
+    color: #666;
+}
+
+.sort-dropdown {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* Products Grid Styling */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Selalu 4 kolom, setiap kolom mengambil fraksi yang sama */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.product-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: auto; 
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.sale-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: #ff4757;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    z-index: 10;
+}
+
+.product-image {
+    width: 100%;
+    padding-bottom: 100%; /* Ini menciptakan rasio aspek 1:1 (kotak) */
+    position: relative;
+    overflow: hidden;
+    background: #eee;
+}
+
+.product-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.product-price {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.original-price {
+    color: #999;
+    text-decoration: line-through;
+    font-size: 0.9rem;
+}
+
+.current-price {
+    color: #ff4757;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Product Detail Page Styling */
+.product-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    align-items: flex-start;
+}
+
+.product-detail-image {
+    background: #eee;
+    border-radius: 15px;
+    width: 100%;
+    padding-bottom: 100%; /* Rasio aspek 1:1 untuk gambar detail */
+    position: relative;
+    overflow: hidden;
+}
+
+.product-detail-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-detail-info {
+    padding: 2rem 0;
+}
+
+.product-detail-info h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.product-detail-info .price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe5a;
+}
+
+.whatsapp-btn::before {
+    content: "📱 ";
+    margin-right: 0.5rem;
+}
+
+.product-meta {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    color: #666;
+}
+
+/* About Page Styles */
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    align-items: center;
+}
+
+.about-image {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); /* Warna gradient disesuaikan */
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.about-image::before {
+    content: "🧶"; /* Ganti ikon */
+    font-size: 6rem;
+    opacity: 0.3;
+    position: absolute;
+}
+
+.about-image-content {
+    font-size: 4rem;
+    z-index: 5;
+}
+
+.about-content {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about-content h3 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.about-content p {
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.about-content ul {
+    color: #666;
+    margin-left: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Contact Page Styles */
+.contact-section {
+    background: white;
+    border-radius: 15px;
+    padding: 3rem;
+    margin: 3rem 0;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Memaksa 4 kolom di desktop */
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contact-item {
+    text-align: center;
+    padding: 2rem;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.contact-item .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.contact-item h4 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.contact-item p {
+    color: #666;
+}
+
+/* Current Page Visibility */
+.current-page {
+    display: none;
+}
+
+.current-page.active {
+    display: block;
+}
+
+/* Responsive Design (Media Queries) */
+@media (max-width: 992px) { /* Mengatur breakpoint di 992px (typical laptop/large tablet) */
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 kolom untuk layar lebih kecil dari 992px */
+    }
+
+    .hero-graphic {
+        /* Sesuaikan ukuran graphic di layar menengah */
+        max-height: 70%; 
+        left: 0; /* Mungkin sedikit lebih jauh dari tepi */
+        /* width: 40%; /* Jika ingin membatasi lebar */
+    }
+
+    .hero-content {
+        width: 60%; /* Beri sedikit lebih banyak ruang di layar menengah */
+        max-width: 600px;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk contact di layar menengah */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Header */
+    header {
+        padding: 0.8rem 1rem;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.8rem;
+        margin-top: 0.5rem;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 50vh;
+        flex-direction: column; /* Mengatur konten dan gambar secara vertikal */
+        justify-content: center; /* Pusatkan konten vertikal */
+        padding: 1rem;
+    }
+
+    .hero-graphic {
+        position: static; /* Hilangkan posisi absolut */
+        transform: none; /* Hilangkan transformasi */
+        max-height: 180px; /* Atur tinggi di mobile */
+        margin-bottom: 1rem; /* Beri jarak ke teks */
+        width: auto; /* Biarkan lebar menyesuaikan */
+    }
+
+    .hero-content {
+        width: 100%; /* Ambil lebar penuh */
+        text-align: center; /* Teks di tengah */
+        padding: 0;
+        max-width: none;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di tablet */
+        gap: 1.5rem;
+    }
+    
+    /* Product Detail */
+    .product-detail {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+
+    .product-detail-image {
+        height: 300px;
+        padding-bottom: 100%; /* Pertahankan rasio aspek 1:1 */
+    }
+
+    .product-detail-info {
+        padding: 0;
+    }
+
+    /* About Section */
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .about-image {
+        height: 250px;
+    }
+
+    .about-content {
+        padding: 2rem;
+    }
+    
+    /* Filter Bar */
+    .filter-bar {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .sort-dropdown {
+        width: 100%;
+    }
+}
+
+/* Media Query untuk Mobile (Layar Sangat Kecil) */
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .hero-graphic {
+        max-height: 120px; /* Lebih kecil lagi di ponsel */
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .page-header h2 {
+        font-size: 2rem;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr; /* Kembali ke 1 kolom di ponsel */
+        gap: 1rem;
+    }
+
+    .product-detail-image {
+        height: 250px;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr; /* 1 kolom di mobile/tablet kecil */
+        gap: 1.5rem;
+    }
+
+    .contact-section {
+        padding: 1.5rem;
+    }
+}
