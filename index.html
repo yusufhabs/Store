@@ -23,7 +23,10 @@
         <section class="hero">
             <img src="FINAL.png" alt="Knit Knack Handmade Design" class="hero-graphic">
             <div class="hero-content">
-                <p>SELAMAT DATANG DI KNIT KNACK!</p> <h1>LENGKAPI GAYAMU DENGAN SENTUHAN KREATIF BUATAN TANGAN</h1> <a href="#" class="btn" onclick="showPage('products')">Temukan Favoritmu</a> </div>
+                <p>SELAMAT DATANG DI KNIT KNACK!</p>
+                <h1>LENGKAPI GAYAMU DENGAN SENTUHAN KREATIF BUATAN TANGAN</h1>
+                <a href="#" class="btn" onclick="showPage('products')">Temukan Favoritmu</a>
+            </div>
         </section>
     </div>
 
@@ -174,7 +177,6 @@
                     <p>Knit knack adalah seni merajut yang menggabungkan teknik tradisional dengan kreativitas modern, menghasilkan pola dan tekstur yang unik. Dalam kerajinan tangan, knit knack menggambarkan keahlian khusus dalam menciptakan karya rajutan yang menarik dan beragam.</p>
                     <p>Teknik dasar merajut melibatkan penggunaan jarum dan benang untuk membentuk kain. Knit knack menambahkan lapisan kompleksitas dengan mengintegrasikan berbagai jenis jahitan dan pola. Kreativitas dalam knit knack juga terlihat dalam pemilihan warna dan bahan.</p>
                     <p>Knit knack juga memberikan manfaat emosional dan terapeutik. Proses merajut dapat menjadi bentuk meditasi, membantu meredakan stres dan meningkatkan konsentrasi. Proyek yang dihasilkan dari knit knack sangat beragam, mulai dari aksesori kecil seperti gantungan kunci dan pouch.</p>
-            
                 </div>
             </div>
         </div>
@@ -342,6 +344,8 @@
             const pages = document.querySelectorAll('.current-page');
             pages.forEach(page => page.classList.remove('active'));
             document.getElementById(pageId).classList.add('active');
+            // Scroll to top when changing page
+            window.scrollTo(0, 0); 
         }
 
         function showProductDetail(productId) {
@@ -353,13 +357,15 @@
                 document.getElementById('detail-original-price').textContent = product.originalPrice;
                 document.getElementById('detail-current-price').textContent = product.currentPrice;
                 document.getElementById('detail-product-description').textContent = product.description;
-                document.getElementById('detail-product-sku').textContent = product.sku; // Menambahkan ini
-                document.getElementById('detail-product-meta-category').textContent = product.category; // Menambahkan ini
+                document.getElementById('detail-product-sku').textContent = product.sku;
+                document.getElementById('detail-product-meta-category').textContent = product.category;
                 document.getElementById('detail-product-material').textContent = product.material;
                 document.getElementById('detail-product-sizes').textContent = product.sizes;
                 
+                // Pastikan nomor WhatsApp di sini juga konsisten jika diubah
+                const whatsappPhoneNumber = '6281234567890'; // Tanpa tanda hubung, sesuai format URL WhatsApp
                 const whatsappMessage = `Halo, saya tertarik dengan ${product.title} seharga ${product.currentPrice}. Bisakah saya mendapatkan informasi lebih lanjut?`;
-                document.getElementById('whatsapp-link').href = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
+                document.getElementById('whatsapp-link').href = `https://wa.me/${whatsappPhoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
                 showPage('product-detail');
             }
